@@ -1,0 +1,74 @@
+CS440 / CS640 Spring 2014: Artificial Intelligence
+Assignment 2
+Due Wednesday February 12th, at classtime via gsubmit
+
+Part I: Problems: 25 points
+5.4 (for Texas Hold'em only) (10 points)
+5.9 (15 points)
+
+Part II Code: 75 points
+
+You are attending a computer science conference next month, and you have
+volunteered to help by coordinating the schedules for student volunteers.  The
+conference has a sign-in desk where attendees can come to get their badges, ask
+questions, pick up proceedings, and so forth.  Two students must man the
+sign-in desk at all times, in hourlong shifts.  Each student is volunteering
+out of the good of her heart, but also because if she does two volunteer
+shifts, her conference registration fee is waived.  However, each student is
+only available for a few hours, since she has talks she wants to go to.
+
+Your job is to take as an input a listing of the students' names and available
+shifts, and compute an assignment of students to shifts that satisfies the
+constraints.  Obviously in this problem, the number of students must be the
+same as the number of shifts.
+
+Example input:
+
+Alice 0 1 3
+Bob 1 2
+Charlie 0 1 2 3
+Danielle 1 2 3
+
+This means - Alice can work shifts 0, 1, 2, and 3; Bob can work shifts 1 and 2,
+etc.
+
+One possible valid output
+0 Alice Charlie
+1 Bob Charlie
+2 Bob Danielle
+3 Alice Danielle
+
+This means - Alice and Charlie work shift 0, Bob and Charlie work shift 1, etc.
+
+Specifically, you must implement the function Solve in hw2.py.  The function
+takes the available shifts for each student (a dictionary from students to a
+list of shifts), and returns the students who work each shift (a dictionary
+from shifts to pairs of students).  You are welcome to implement additional
+helper functions in hw2.py, but do not use any global variables or other files
+(aside from being poor practice, they make unit testing more difficult).
+
+Feel free to add additional test cases to test_hw2.py
+
+To run tests, you can do
+python -m unittest discover
+
+You can also test your program by writing text files in the input format given
+above and calling the program as follows.
+
+python hw2.py input.txt
+
+WHAT TO TURN IN
+  You should create a directory hw02, containing two or three files:
+    hw2.py
+    hw2-answers.pdf (answers to the questions in part I)
+    optionally: test_hw2.py [ only submit it if you have added new test cases. ]
+
+  Submit the whole folder using gsubmit:
+    >> gsubmit cs640 hw02
+    or
+    >> gsubmit cs440 hw02
+    (depending on which class you're in).
+
+  You must adhere to this naming and submitting scheme exactly; not doing so
+  makes grading much slower; there will be a penalty applied for not following
+  this scheme.
